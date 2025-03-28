@@ -1,27 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: var(--font-merriweather), serif;
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .flex-center {
+    @apply flex items-center justify-center;
   }
 }
+@theme {
+  --color-primary: #15031B;
+  --color-secondary: #F2F2F2;
+
+  --green-50: #eefbf5;
+  --green-100: #d7f4e6;
+  --green-200: #b2e8d1;
+  --green-300: #80d5b6;
+  --green-400: #4bbc97;
+  --green-500: #29a07d;
+  --green-600: #1a8164;
+  --green-700: #135e4b;
+  --green-800: #135242;
+  --green-900: #104438;
+  --green-950: #082620;
+
+  --geraldine-50: #fdf4f3;
+  --geraldine-100: #fde5e3;
+  --geraldine-200: #fcd0cc;
+  --geraldine-300: #f8afa9;
+  --geraldine-400: #f28076;
+  --geraldine-500: #e8584b;
+  --geraldine-600: #d43b2e;
+  --geraldine-700: #b22f23;
+  --geraldine-800: #932a21;
+  --geraldine-900: #7b2821;
+  --geraldine-950: #42110d;
+}
+
+
