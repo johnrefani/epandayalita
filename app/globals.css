@@ -3,6 +3,7 @@
 @layer base {
   body {
     font-family: var(--font-merriweather), serif;
+    background-color: var(--color-green-300);
   }
 }
 @layer utilities {
