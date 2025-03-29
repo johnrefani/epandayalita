@@ -3,20 +3,40 @@
 /* Base styles */
 @layer base {
   :root {
-    --color-primary: #15031b;
-    --color-secondary: #f2f2f2;
+    --color-primary: #15031B;
+    --color-secondary: #F2F2F2;
 
-    --green-50: #eefbf5;
-    --green-100: #d7f4e6;
-    --green-200: #b2e8d1;
-    --green-300: #80d5b6;
-    --green-400: #4bbc97;
-    --green-500: #29a07d;
-    --green-600: #1a8164;
-    --green-700: #135e4b;
-    --green-800: #135242;
-    --green-900: #104438;
-    --green-950: #082620;
+    /* Green palette */
+    --color-green-50: #eefbf5;
+    --color-green-100: #d7f4e6;
+    --color-green-200: #b2e8d1;
+    --color-green-300: #80d5b6;
+    --color-green-400: #4bbc97;
+    --color-green-500: #29a07d;
+    --color-green-600: #1a8164;
+    --color-green-700: #135e4b;
+    --color-green-800: #135242;
+    --color-green-900: #104438;
+    --color-green-950: #082620;
+
+    /* Geraldine palette */
+    --color-geraldine-50: #fdf4f3;
+    --color-geraldine-100: #fde5e3;
+    --color-geraldine-200: #fcd0cc;
+    --color-geraldine-300: #f8afa9;
+    --color-geraldine-400: #f28076;
+    --color-geraldine-500: #e8584b;
+    --color-geraldine-600: #d43b2e;
+    --color-geraldine-700: #b22f23;
+    --color-geraldine-800: #932a21;
+    --color-geraldine-900: #7b2821;
+    --color-geraldine-950: #42110d;
+
+   /*spacing*/ 
+    --mobile-margin: 1rem;
+    --tablet-margin: 3.75rem;
+    --laptop-margin: 6.25rem;
+    --desktop-margin: 7.5rem;
   }
 
   body {
@@ -25,7 +45,7 @@
   }
 }
 
-/* Utilities */
+
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
@@ -112,4 +132,10 @@
   .bg-green-950 {
     background-color: var(--green-950);
   }
+}
+
+  .mobile-margin { margin: var(--mobile-margin); }
+  .tablet-margin { margin: var(--tablet-margin); }
+  .laptop-margin { margin: var(--laptop-margin); }
+  .desktop-margin { margin: var(--desktop-margin); }
 }

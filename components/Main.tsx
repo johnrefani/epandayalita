@@ -7,7 +7,7 @@ const Main = () => {
       <div className="flex w-full h-screen items-center justify-center bg-white">   
         <div className="grid gap-5 text-center">
             <div>
-              <p className='text-base md:text-xl'>Magandang Araw!</p>
+              <p className='text-base md:text-xl text-black'>Magandang Araw!</p>
               <p className='text-base md:text-xl text-green-700'>Anong Salita ang iyong hanap?</p>
             </div>
             
