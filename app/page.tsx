@@ -1,10 +1,11 @@
-import { Header } from "@/lib/imports";
+import { Header, Main } from "@/lib/imports";
 
 
 export default function Home() {
   return (
     <main >
-      <Header/> 
+      <Header/>
+      <Main/>
     </main>
   );
 }
