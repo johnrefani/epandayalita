@@ -61,7 +61,7 @@ const Header = () => {
                   {openDropdown === link.id && (
                     <div
                       ref={dropdownRef}
-                      className="absolute left-0 mt-2 w-60 bg-white shadow-md rounded-md overflow-hidden"
+                      className="absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md overflow-hidden"
                     >
                       <ul>
                         {link.dropdown.map((item) => (
