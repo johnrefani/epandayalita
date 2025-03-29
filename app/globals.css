@@ -1,43 +1,115 @@
 @import "tailwindcss";
 
+/* Base styles */
 @layer base {
+  :root {
+    --color-primary: #15031b;
+    --color-secondary: #f2f2f2;
+
+    --green-50: #eefbf5;
+    --green-100: #d7f4e6;
+    --green-200: #b2e8d1;
+    --green-300: #80d5b6;
+    --green-400: #4bbc97;
+    --green-500: #29a07d;
+    --green-600: #1a8164;
+    --green-700: #135e4b;
+    --green-800: #135242;
+    --green-900: #104438;
+    --green-950: #082620;
+  }
+
   body {
     font-family: var(--font-merriweather), serif;
-    background-color: var(--color-green-300);
+    background-color: var(--green-300);
   }
 }
+
+/* Utilities */
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;
   }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  /* Custom Green Colors */
+  .text-green-50 {
+    color: var(--green-50);
+  }
+  .text-green-100 {
+    color: var(--green-100);
+  }
+  .text-green-200 {
+    color: var(--green-200);
+  }
+  .text-green-300 {
+    color: var(--green-300);
+  }
+  .text-green-400 {
+    color: var(--green-400);
+  }
+  .text-green-500 {
+    color: var(--green-500);
+  }
+  .text-green-600 {
+    color: var(--green-600);
+  }
+  .text-green-700 {
+    color: var(--green-700);
+  }
+  .text-green-800 {
+    color: var(--green-800);
+  }
+  .text-green-900 {
+    color: var(--green-900);
+  }
+  .text-green-950 {
+    color: var(--green-950);
+  }
+
+  .bg-green-50 {
+    background-color: var(--green-50);
+  }
+  .bg-green-100 {
+    background-color: var(--green-100);
+  }
+  .bg-green-200 {
+    background-color: var(--green-200);
+  }
+  .bg-green-300 {
+    background-color: var(--green-300);
+  }
+  .bg-green-400 {
+    background-color: var(--green-400);
+  }
+  .bg-green-500 {
+    background-color: var(--green-500);
+  }
+  .bg-green-600 {
+    background-color: var(--green-600);
+  }
+  .bg-green-700 {
+    background-color: var(--green-700);
+  }
+  .bg-green-800 {
+    background-color: var(--green-800);
+  }
+  .bg-green-900 {
+    background-color: var(--green-900);
+  }
+  .bg-green-950 {
+    background-color: var(--green-950);
+  }
 }
-@theme {
-  --color-primary: #15031B;
-  --color-secondary: #F2F2F2;
-
-  --green-50: #eefbf5;
-  --green-100: #d7f4e6;
-  --green-200: #b2e8d1;
-  --green-300: #80d5b6;
-  --green-400: #4bbc97;
-  --green-500: #29a07d;
-  --green-600: #1a8164;
-  --green-700: #135e4b;
-  --green-800: #135242;
-  --green-900: #104438;
-  --green-950: #082620;
-
-  --geraldine-50: #fdf4f3;
-  --geraldine-100: #fde5e3;
-  --geraldine-200: #fcd0cc;
-  --geraldine-300: #f8afa9;
-  --geraldine-400: #f28076;
-  --geraldine-500: #e8584b;
-  --geraldine-600: #d43b2e;
-  --geraldine-700: #b22f23;
-  --geraldine-800: #932a21;
-  --geraldine-900: #7b2821;
-  --geraldine-950: #42110d;
-}
-
-
