@@ -1,14 +1,19 @@
 import React from 'react'
+import { IoSearch } from "react-icons/io5";
 
 const Searchbar = () => {
   return (
-    <div className='w-[300px] md:w-[500px] lg:w-[600px] border border-black shadow-lg shadow-green-900/50 rounded-full flex justify-center items-center'>
-      
-      <input className="w-full h-7 md:h-full outline-none pt-3 pb-3 pl-2 text-xs" type='text'></input>
-      <img src='/magnify.svg' className='w-3 h-3 md:w-4 md:h-4 ml-4 mr-4 '></img>
-           
+    <div className='w-full md:w-[600px] lg:w-[700px] h-10 md:h-12 lg:h-14 shadow-lg [box-shadow:0_0_8px_2px_rgba(178,232,209,0.75)] rounded-full flex items-center px-4 md:px-6 hover:[box-shadow:0_0_12px_4px_rgba(178,232,209,0.4)] transition-all duration-300'>
+      <input 
+        className="w-full h-full outline-none bg-transparent text-sm md:text-base px-2 md:px-4 placeholder-gray-400"
+        type='text'
+        placeholder='Search...'
+      />
+        <IoSearch 
+        className='w-6 h-6 md:w-8 md:h-8 ml-2 md:ml-4 flex-shrink-0 hover:scale-110 transition-transform text-green-300'
+      />
     </div>
   )
 }
 
-export default Searchbar
+export default Searchbar;
