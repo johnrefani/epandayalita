@@ -1,21 +1,38 @@
 import React from 'react'
+import { IoSearch } from "react-icons/io5";
 
 const Card = () => {
   return (
-    <div className="bg-green-100 md:bg-white flex flex-col-reverse md:flex-row w-full md:w-xl shadow-none md:shadow-lg rounded-lg overflow-hidden">
-        <div className="bg-white p-5 flex items-center justify-center">
-            <img src='/magnify.svg' className='w-[200px] h-[200px]'></img>
+    <div className="group bg-green-50 flex flex-col lg:flex-row w-full max-w-6xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
+      <div className="bg-white p-8 lg:p-12 flex items-center justify-center lg:w-2/5 relative">
+        <div className="relative w-full aspect-square max-w-[300px]">
+        <IoSearch 
+            className="w-full h-auto object-contain p-6 transition-transform duration-300 group-hover:scale-105 text-green-800"
+          />
         </div>
-        <div className="bg-green-100 p-6 w-full mt-16 md:mt-0 md:w-3/4 grid gap-2">
-            <div className=''>
-                <span className='bg-green-900 w-14 h-1 inline-block'></span>
-                <p className='text-2xl'>About</p>
-            </div>
-            <p className="text-gray-700 text-xs text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
+      </div>
+
+      <div className="bg-green-50 p-8 lg:p-12 lg:w-3/5 space-y-6">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <span className="bg-green-900 w-16 h-1.5 inline-block rounded-full"></span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-green-900">
+              Tungkol sa E-PANDAYALITA
+            </h2>
+          </div>
+          
+          <p className="text-green-800 text-base lg:text-lg leading-relaxed lg:leading-loose">
+            Ang E-PANDAYALITA ay isang natatanging online na diksiyonaryo na nakatuon sa 
+            pagpapanatili at pagpapalawak ng kaalaman sa bokabularyong ginagamamit sa 
+            tradisyunal na pandayan, lalo na sa paggawa ng itak at iba pang kasangkapang 
+            may talim. Layunin nitong magbigay ng komprehensibo at madaling gamitin na 
+            plataporma kung saan maaaring tuklasin ng mga mag-aaral, panday, at mahilig 
+            sa sining ng pagpapanday ang mayamang wikang kaugnay ng metalworking.
+          </p>
         </div>
+
+        <div className="hidden lg:block w-24 h-1 bg-green-200 rounded-full"></div>
+      </div>
     </div>
   )
 }
