@@ -19,19 +19,6 @@
     --color-green-900: #104438;
     --color-green-950: #082620;
 
-    /* Geraldine palette */
-    --color-geraldine-50: #fdf4f3;
-    --color-geraldine-100: #fde5e3;
-    --color-geraldine-200: #fcd0cc;
-    --color-geraldine-300: #f8afa9;
-    --color-geraldine-400: #f28076;
-    --color-geraldine-500: #e8584b;
-    --color-geraldine-600: #d43b2e;
-    --color-geraldine-700: #b22f23;
-    --color-geraldine-800: #932a21;
-    --color-geraldine-900: #7b2821;
-    --color-geraldine-950: #42110d;
-
     /* Spacing */
     --mobile-margin: 1rem;
     --tablet-margin: 3.75rem;
