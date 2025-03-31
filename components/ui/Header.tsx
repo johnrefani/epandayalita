@@ -42,7 +42,7 @@ const Header = () => {
                 <li key={link.id} className="relative">
                   {/* Categories Button */}
                   <button
-                    className="flex items-center gap-1 px-4  cursor-pointer hover:border-b-2 hover:border-green-600"
+                    className="flex items-center gap-1 cursor-pointer px-2 border-b-2 border-transparent hover:border-green-600"
                     onClick={() =>
                       setOpenDropdown((prev) =>
                         prev === link.id ? null : link.id
