@@ -8,7 +8,7 @@ const CatCard = ({ title, pic ,speech}: CatCardProps) => {
         <div className='flex items-center gap-4'>
         <Image src={pic} alt="cat" width={64} height={64} className='border-1 border-green-900 '/>
         <div className='flex flex-col'>
-            <h1 className='text-base font-bold text-primary'>{title}</h1>
+            <h1 className='text-base font-bold'>{title}</h1>
             <h2 className='text-sm opacity-60 text-nowrap'>{speech}</h2>
         </div>
         </div>

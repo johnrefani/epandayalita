@@ -16,12 +16,12 @@ const Card = () => {
         <div className="space-y-4">
           <div className="space-y-2">
             <span className="bg-green-900 w-16 h-1.5 inline-block rounded-full"></span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-green-900">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Tungkol sa E-PANDAYALITA
             </h2>
           </div>
           
-          <p className="text-green-800 text-base lg:text-lg leading-relaxed lg:leading-loose">
+          <p className="text-base lg:text-lg leading-relaxed lg:leading-loose">
             Ang E-PANDAYALITA ay isang natatanging online na diksiyonaryo na nakatuon sa 
             pagpapanatili at pagpapalawak ng kaalaman sa bokabularyong ginagamamit sa 
             tradisyunal na pandayan, lalo na sa paggawa ng itak at iba pang kasangkapang 

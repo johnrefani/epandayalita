@@ -1,14 +1,12 @@
-import React from 'react'
-import Card from './ui/Card'
+import React from "react";
+import Card from "./ui/Card";
 
 const About = () => {
   return (
-    <section className=''>
-        <div className='flex justify-center items-center h-screen md:m-auto'>
-            <Card/>
-        </div>
+    <section className="flex justify-center items-center py-20 md:m-auto">
+      <Card />
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

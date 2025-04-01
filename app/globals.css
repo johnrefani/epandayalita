@@ -3,9 +3,6 @@
 /* Base styles */
 @layer base {
   :root {
-    --color-primary: #15031B;
-    --color-secondary: #F2F2F2;
-
     /* Green palette */
     --color-green-50: #eefbf5;
     --color-green-100: #d7f4e6;
@@ -24,8 +21,12 @@
     --tablet-margin: 3.75rem;
     --laptop-margin: 6.25rem;
     --desktop-margin: 7.5rem;
-  }
 
+ 
+  }
+  h1, h2,h3,h4,h5,h6, p ,ul ,li, button{
+    color: var(--color-green-950);
+  }
   body {
     font-family: var(--font-merriweather), serif;
     background-color: whitesmoke;
@@ -52,33 +53,85 @@
   }
 
   /* Green Color Utilities */
-  .text-green-50 { color: var(--color-green-50); }
-  .text-green-100 { color: var(--color-green-100); }
-  .text-green-200 { color: var(--color-green-200); }
-  .text-green-300 { color: var(--color-green-300); }
-  .text-green-400 { color: var(--color-green-400); }
-  .text-green-500 { color: var(--color-green-500); }
-  .text-green-600 { color: var(--color-green-600); }
-  .text-green-700 { color: var(--color-green-700); }
-  .text-green-800 { color: var(--color-green-800); }
-  .text-green-900 { color: var(--color-green-900); }
-  .text-green-950 { color: var(--color-green-950); }
+  .text-green-50 {
+    color: var(--color-green-50);
+  }
+  .text-green-100 {
+    color: var(--color-green-100);
+  }
+  .text-green-200 {
+    color: var(--color-green-200);
+  }
+  .text-green-300 {
+    color: var(--color-green-300);
+  }
+  .text-green-400 {
+    color: var(--color-green-400);
+  }
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-green-700 {
+    color: var(--color-green-700);
+  }
+  .text-green-800 {
+    color: var(--color-green-800);
+  }
+  .text-green-900 {
+    color: var(--color-green-900);
+  }
+  .text-green-950 {
+    color: var(--color-green-950);
+  }
 
-  .bg-green-50 { background-color: var(--color-green-50); }
-  .bg-green-100 { background-color: var(--color-green-100); }
-  .bg-green-200 { background-color: var(--color-green-200); }
-  .bg-green-300 { background-color: var(--color-green-300); }
-  .bg-green-400 { background-color: var(--color-green-400); }
-  .bg-green-500 { background-color: var(--color-green-500); }
-  .bg-green-600 { background-color: var(--color-green-600); }
-  .bg-green-700 { background-color: var(--color-green-700); }
-  .bg-green-800 { background-color: var(--color-green-800); }
-  .bg-green-900 { background-color: var(--color-green-900); }
-  .bg-green-950 { background-color: var(--color-green-950); }
+  .bg-green-50 {
+    background-color: var(--color-green-50);
+  }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-green-200 {
+    background-color: var(--color-green-200);
+  }
+  .bg-green-300 {
+    background-color: var(--color-green-300);
+  }
+  .bg-green-400 {
+    background-color: var(--color-green-400);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-green-600 {
+    background-color: var(--color-green-600);
+  }
+  .bg-green-700 {
+    background-color: var(--color-green-700);
+  }
+  .bg-green-800 {
+    background-color: var(--color-green-800);
+  }
+  .bg-green-900 {
+    background-color: var(--color-green-900);
+  }
+  .bg-green-950 {
+    background-color: var(--color-green-950);
+  }
 }
 
 /* Margin utilities */
-.mobile-margin { margin: var(--mobile-margin); }
-.tablet-margin { margin: var(--tablet-margin); }
-.laptop-margin { margin: var(--laptop-margin); }
-.desktop-margin { margin: var(--desktop-margin); }
+.mobile-margin {
+  margin: var(--mobile-margin);
+}
+.tablet-margin {
+  margin: var(--tablet-margin);
+}
+.laptop-margin {
+  margin: var(--laptop-margin);
+}
+.desktop-margin {
+  margin: var(--desktop-margin);
+}
