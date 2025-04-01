@@ -7,7 +7,7 @@ const Main = () => {
       <div className="w-full max-w-4xl px-4 text-center">
         <div className="space-y-4 md:space-y-6 lg:space-y-8">
           <div className="space-y-1 md:space-y-2">
-            <p className="text-2xl md:text-3xl text-green-950 font-semibold">
+            <p className="text-2xl md:text-3xl font-semibold">
               Magandang Araw!
             </p>
             <p className="text-2xl md:text-3xl text-green-700 font-semibold">

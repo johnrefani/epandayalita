@@ -6,7 +6,7 @@ import { footerLinks } from "@/data";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-green-700 px-4 md:px-16 lg:px-24 py-16 text-secondary">
+    <footer className="w-full bg-green-700 px-4 md:px-16 lg:px-24 py-16 text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-8">
         {/* Logo */}
         <div className="relative w-52 min-h-28 justify-self-center md:justify-self-start">
@@ -22,16 +22,16 @@ const Footer = () => {
         {/* Footer Links */}
         {footerLinks.map((section) => (
           <div key={section.id} className="flex flex-col gap-2.5">
-            <h2 className="text-base">{section.title}</h2>
+            <h2 className="text-base text-white">{section.title}</h2>
 
             {/* Links Section */}
             {section.links &&
               section.links.map((link) => (
-                <h3 className="text-sm" key={link.id}>
+                <h3 className="text-sm text-white" key={link.id}>
                   <Link
                     key={link.id}
                     href={link.href}
-                    className="hover:underline"
+                    className=" hover:underline"
                   >
                     {link.title}
                   </Link>
@@ -41,15 +41,15 @@ const Footer = () => {
             {/* Contacts Section */}
             {section.contacts && (
               <div className="flex flex-col">
-                <h2 className="text-sm">Email Address:</h2>
+                <h2 className="text-sm text-white">Email Address:</h2>
                 <Link
                   key={section.contacts[0].id}
                   href={section.contacts[0].href}
-                  className="hover:underline"
+                  className="text-sm text-white hover:underline"
                 >
                   {section.contacts[0].title}
                 </Link>
-                <h2 className="text-sm mt-2">
+                <h2 className="text-sm text-white mt-2">
                   Contact Number: {section.contacts[1]?.title}
                 </h2>
               </div>

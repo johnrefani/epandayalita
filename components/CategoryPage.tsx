@@ -25,7 +25,7 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
       <Header />
       <section className="flex flex-col mt-20">
         <div className="flex-center py-9 bg-green-800">
-          <h1 className="text-3xl font-bold text-white uppercase">
+          <h1 className="text-3xl font-bold text-green-50 uppercase">
             {category.title}
           </h1>
         </div>

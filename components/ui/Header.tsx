@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-secondary shadow-md">
+    <header className="fixed top-0 z-50 w-full bg-white shadow-md">
       <div className="px-4 md:px-16 lg:px-24 py-5 flex justify-between items-center">
         {/* Logo */}
         <Link href={"/home"}>
@@ -36,7 +36,7 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:block">
-          <ul className="flex text-base items-center gap-6 text-primary">
+          <ul className="flex text-base items-center gap-6">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <li key={link.id} className="relative">
@@ -68,7 +68,7 @@ const Header = () => {
                           <li key={item.id}>
                             <Link
                               href={item.href}
-                              className="block px-4 py-2 text-primary hover:bg-green-100"
+                              className="block px-4 py-2 hover:bg-green-100"
                               onClick={() => setOpenDropdown(null)}
                             >
                               {item.title}
@@ -100,7 +100,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-4">
           <button
-            className="text-primary cursor-pointer"
+            className="cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -112,9 +112,9 @@ const Header = () => {
       <nav
         className={`${
           menuOpen ? "block" : "hidden"
-        } lg:hidden transition-all duration-300`}
+        } lg:hidden transition-all duration-300 z-50 bg-white`}
       >
-        <ul className="flex flex-col items-center text-primary text-base gap-4 p-4">
+        <ul className="flex flex-col items-center text-base gap-4 p-4">
           {navLinks.map((link) =>
             link.dropdown ? (
               <li key={link.id} className="relative w-full text-center">
