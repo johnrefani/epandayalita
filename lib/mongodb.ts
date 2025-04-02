@@ -1,15 +1,21 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, Db } from "mongodb";
 
 const uri = process.env.MONGODB_URI as string;
-const client = new MongoClient(uri);
+let client: MongoClient;
+let db: Db;
 
-export async function connectToDatabase() {
-  try {
-    await client.connect();
-    console.log('Connected to MongoDB');
-    return client.db('epandayalita_db');
-  } catch (error) {
-    console.error('MongoDB connection error:', error);
-    throw error;
-  }
+if (!uri) {
+  throw new Error("Environment Error");
 }
+
+async function connectToDatabase() {
+  if (db) return db;
+
+  client = new MongoClient(uri);
+  await client.connect();
+  db = client.db("epandayalita_db");
+  console.log("Connected to MongoDB");
+  return db;
+}
+
+export default connectToDatabase;
