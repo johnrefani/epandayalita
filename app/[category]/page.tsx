@@ -1,12 +1,14 @@
 import CategoryPage from "@/components/CategoryPage";
-import { Footer, Header } from "@/lib/imports";
+import { Header, Footer } from "@/lib/imports";
 import React from "react";
 
 const Page = ({ params }: { params: { category: string } }) => {
   return (
     <main>
       <Header />
-      <CategoryPage params={params} />
+      <div className="mx-[1rem] md:mx-[3.75rem] lg:mx-[6.25rem] xl:mx-[7.5rem]">
+        <CategoryPage params={params} />
+      </div>
       <Footer />
     </main>
   );

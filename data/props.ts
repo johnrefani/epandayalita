@@ -2,6 +2,7 @@ export interface CatCardProps {
     title: string;
     pic: string;
     speech: string;
+    hasNoImage: boolean;
   }
 export interface ResCardProps {
     title: string;
