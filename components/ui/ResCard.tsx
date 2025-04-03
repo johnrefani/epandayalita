@@ -2,6 +2,7 @@ import { ResCardProps } from "@/data/props";
 import Image from "next/image";
 import React from "react";
 import AudioPlayer from "./AudioPlayer";
+import { IoSearch } from "react-icons/io5";
 
 const ResCard = ({
   id,
@@ -24,7 +25,7 @@ const ResCard = ({
           <div className="flex-shrink-0 w-full sm:w-64 md:w-72 lg:w-80 h-64 md:h-72 lg:h-80 relative">
             {image ? (
               <Image
-                className="border-2 border-green-400 rounded-md object-contain"
+                className="border-2 border-green-400 rounded-md object-contain bg-gray-100"
                 src={image}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
@@ -33,7 +34,9 @@ const ResCard = ({
               />
             ) : (
               <div className="w-full h-full border border-green-400 rounded-md flex items-center justify-center text-gray-500 text-sm md:text-base">
-                No Image Available
+                <IoSearch 
+                  className="w-full h-auto object-contain p-6 transition-transform duration-300 group-hover:scale-105 text-green-800"
+                />
               </div>
             )}
           </div>
