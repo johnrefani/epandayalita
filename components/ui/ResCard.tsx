@@ -13,40 +13,57 @@ const ResCard = ({
   pronunciation,
 }: ResCardProps) => {
   return (
-    <section className="relative flex-center pt-16 mt-20">
-      <div className="absolute inset-0 grid grid-rows-[60%_40%]">
+    <section className="relative flex justify-center pt-16 mt-16">
+      <div className="absolute inset-0 grid grid-rows-[50%_50%]">
         <div className="bg-green-700"></div>
-        <div className="bg-white"></div>
+        <div className=""></div>
       </div>
 
-      <div className="relative z-10 w-xl md:w-2xl lg:w-3xl xl:w-5xl flex px-16 py-14 rounded-md shadow-lg bg-white mb-10">
-        <div className="min-h-[250] max-w-[300px]">
-          {image ? (
-            <Image
-              className="border border-green-900 object-cover"
-              src={image}
-              width={300}
-              height={300}
-              alt={word}
-            />
-          ) : (
-            <div className="w-[300px] h-[300px] border border-green-900 flex items-center justify-center text-gray-500">
-              No Image
-            </div>
-          )}
-        </div>
-
-        <div className="py-2 px-4 flex flex-col">
-          <div className="gap-6 flex items-center">
-            <h1 className="text-3xl font-semibold">{word}</h1>
-            {audio ? <AudioPlayer audioUrl={audio} /> : <span>No Audio</span>}
+      <div className="relative z-10 w-full max-w-5xl mx-4 sm:mx-6 lg:mx-8 px-4 sm:px-6 lg:px-8 py-8 rounded-lg shadow-xl bg-white mb-12">
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+          <div className="flex-shrink-0 w-full sm:w-64 md:w-72 lg:w-80 h-64 md:h-72 lg:h-80 relative">
+            {image ? (
+              <Image
+                className="border-2 border-green-400 rounded-md object-contain"
+                src={image}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                alt={word}
+                priority
+              />
+            ) : (
+              <div className="w-full h-full border border-green-400 rounded-md flex items-center justify-center text-gray-500 text-sm md:text-base">
+                No Image Available
+              </div>
+            )}
           </div>
-          <h2 className="w-fit mt-2 rounded-md border shadow py-2 px-4 text-base">
-            {pronunciation || "N/A"}
-          </h2>
-          <div className="mt-8">
-            <h2 className="text-xl font-bold">{speech || "Unknown"}</h2>
-            <p className="text-sm opacity-75 mt-4">{definition || "No definition available"}</p>
+
+          <div className="flex-1 flex flex-col gap-4">
+            <div className="flex items-center gap-3 sm:gap-6">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-950">
+                {word}
+              </h1>
+              {audio ? (
+                <AudioPlayer audioUrl={audio} />
+              ) : (
+                <span className="text-sm md:text-base text-gray-500">No Audio</span>
+              )}
+            </div>
+
+            <h2 className="w-fit text-sm sm:text-base lg:text-lg text-green-700 bg-green-100 rounded-md border border-green-300 py-1 px-3 shadow-sm">
+              {pronunciation || "N/A"}
+            </h2>
+
+            <div className="border-t border-gray-200 my-2 md:my-4"></div>
+
+            <div className="">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-green-800">
+                {speech || "Unknown"}
+              </h3>
+              <p className="text-sm sm:text-base lg:text-lg mt-3 text-gray-600 leading-relaxed">
+                {definition || "No definition available"}
+              </p>
+            </div>
           </div>
         </div>
       </div>
