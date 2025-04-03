@@ -1,10 +1,10 @@
 import { ResCardProps } from "@/data/props";
 import Image from "next/image";
 import React from "react";
-import { HiSpeakerWave } from "react-icons/hi2";
+import AudioPlayer from "./AudipPlayer";
 
 
-const ResCard = ({ title, pic, speech, phonetic, description } : ResCardProps) => {
+const ResCard = ({ id, word, image, speech, audio, definition, pronunciation } : ResCardProps) => {
   return (
     <section className="relative flex-center pt-16 mt-20">
       <div className="absolute inset-0 grid grid-rows-[60%_40%]">
@@ -16,24 +16,24 @@ const ResCard = ({ title, pic, speech, phonetic, description } : ResCardProps) =
         <div className="min-h-[250] max-w-[300px]">
           <Image
             className="border border-green-900 object-cover"
-            src={pic}
+            src={image}
             width={300}
             height={300}
-            alt={title}
+            alt={word}
           />
         </div>
 
         <div className="py-2 px-4 flex flex-col">
           <div className="gap-6 flex">
-            <h1 className="text-3xl font-semibold">{title}</h1>
-            <HiSpeakerWave size={30} className="self-center" />
+            <h1 className="text-3xl font-semibold">{word}</h1>
+            <AudioPlayer audioUrl={audio}/>
           </div>
           <h2 className="w-fit mt-2 rounded-md border shadow py-2 px-4 text-base">
-            {phonetic}
+            {pronunciation}
           </h2>
           <div className="mt-8">
             <h2 className="text-xl font-bold">{speech}</h2>
-            <p className="text-sm opacity-75 mt-4">{description}</p>
+            <p className="text-sm opacity-75 mt-4">{definition}</p>
           </div>
         </div>
       </div>

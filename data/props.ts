@@ -5,11 +5,14 @@ export interface CatCardProps {
     hasNoImage: boolean;
   }
 export interface ResCardProps {
-    title: string;
-    pic: string;
+    id?:number;
+    word: string;
+    image: string;
     speech: string;
-    phonetic: string;
-    description: string;
+    audio: string;
+    definition: string;
+    pronunciation: string;
+    category?: string;
   }
   export interface Entry {
     id: number;

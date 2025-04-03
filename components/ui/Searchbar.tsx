@@ -31,14 +31,14 @@ const Searchbar = () => {
       }
     };
 
-    const timeoutId = setTimeout(fetchResults, 300);
+    const timeoutId = setTimeout(fetchResults, 100);
     return () => clearTimeout(timeoutId);
   }, [query]);
 
   return (
     <div
       className={`w-full md:w-[600px] lg:w-[700px] shadow-lg [box-shadow:0_0_8px_2px_rgba(178,232,209,0.75)] rounded-2xl transition-all duration-300 ${
-        results.length > 0 ? "bg-white" : "bg-transparent"
+        results.length > 0 ? "bg-white border-2 border-green-200" : "bg-transparent"
       }`}
     >
       <div className="flex items-center px-4 md:px-6 h-10 md:h-12 lg:h-14">
