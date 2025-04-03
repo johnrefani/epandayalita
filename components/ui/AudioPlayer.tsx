@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useRef, useEffect } from 'react';
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 import { motion } from 'framer-motion';
