@@ -27,11 +27,13 @@ const Page = ({ params }: { params: { category: string; result: string } }) => {
     <main>
       <Header />
       <ResCard
-        title={result.title}
-        pic={result.pic}
+        word={result.title}
+        image={result.pic}
         speech={category.speech}
-        phonetic={result.phonetic}
-        description={result.description}
+        pronunciation={result.phonetic}
+        definition={result.description}
+        audio={result.audio}
+        
       />
 
       {/* Popular Terms Section */}
