@@ -3,7 +3,7 @@ import Card from "./ui/Card";
 
 const About = () => {
   return (
-    <section className="flex justify-center items-center py-20 md:m-auto">
+    <section id='about' className="flex justify-center items-center py-20 md:m-auto">
       <Card />
     </section>
   );

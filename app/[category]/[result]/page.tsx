@@ -26,7 +26,7 @@ async function fetchPopularTerms(category: string): Promise<Entry[]> {
 }
 
 const Page = async ({ params }: { params: { category: string; result: string } }) => {
-  const formattedCategory = decodeURIComponent(params.category).replace(/_/g, " & ");
+
 
   let entry: Entry | null = null;
   let popularTerms: Entry[] = [];
