@@ -3,28 +3,28 @@ export const navLinks = [
   {
     id: 1,
     title: "Home",
-    href: "/#",
+    href: "#",
   },
   {
     id: 2,
     title: "Categories",
-    href: "#",
+    href: "#categories",
     dropdown: [
-      { id: 1, title: "Parts", href: "/parts" },
+      { id: 1, title: "Parts", href: "/part" },
       { id: 2, title: "Process", href: "/process" },
       { id: 3, title: "Products", href: "/products" },
-      { id: 4, title: "Tools & Materials", href: "/tools_materials/" },
+      { id: 4, title: "Tools & Materials", href: "/tools" },
     ],
   },
   {
     id: 3,
     title: "About",
-    href: "/#",
+    href: "#about",
   },
   {
     id: 4,
     title: "Contact",
-    href: "/#",
+    href: "#contact",
   },
 ];
 
@@ -44,18 +44,9 @@ export const footerLinks = [
     title: "Contact",
     contacts: [
       { id: 1, title: "info@pandayalitadictionary.com", href: "mailto:info@pandayalitadictionary.com" },
-      { id: 2, title: "+123 456 7890", href: "tel:+1234567890" },
+      { id: 2, title: "09519713078", href: "tel:09519713078" },
     ],
   },
-  {
-    id:3,
-    title: "Socials",
-    icons: [
-      { id: 1, icon: "/icons/facebook.svg", alt: "facebook" ,href: "https://www.facebook.com/pandayalitadictionary" },
-      { id: 2, icon: "/icons/linkedin.svg", alt: "linkedin" ,href: "https://www.linkedin.com/pandayalitadictionary"},
-      { id: 3, icon: "/icons/twitter.svg", alt: "twitter",href: "https://www.x.com/pandayalitadictionary" },
-      { id: 4, icon: "/icons/instagram.svg", alt: "instagram" ,href: "https://www.instagram.com/pandayalitadictionary"},
-    ],
-  },
+  
 ];
 

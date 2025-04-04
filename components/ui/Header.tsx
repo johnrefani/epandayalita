@@ -1,67 +1,101 @@
 "use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { navLinks } from "@/data";
 import Link from "next/link";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { navLinks } from "@/data";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith("#")) {
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(href);
+      }
+    } else {
+      window.location.href = href;
+    }
+  };
+
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+    const sections = navLinks.map((link) => link.href).filter((href) => href.startsWith("#"));
+
+    const handleScrollEvent = () => {
+      let current = "";
+      sections.forEach((href) => {
+        const section = document.querySelector(href);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            current = href;
+          }
+        }
+      });
+      setActiveSection(current);
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setOpenDropdown(null);
       }
     };
+
+    window.addEventListener("scroll", handleScrollEvent);
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollEvent);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white shadow-md">
+    <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <div className="px-4 md:px-16 lg:px-24 py-5 flex justify-between items-center">
         {/* Logo */}
-        <Link href={"/home"}>
+        <Link href="/home">
           <Image src="/logo.svg" alt="logo" width={250} height={100} />
         </Link>
 
+        {/* Desktop Nav */}
         <nav className="hidden lg:block">
-          <ul className="flex text-base items-center gap-6">
+          <ul className="flex gap-6 text-base items-center">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <li key={link.id} className="relative">
-                  {/* Categories Button */}
+                <li
+                  key={link.id}
+                  className="relative"
+                >
                   <button
-                    className="flex items-center gap-1 cursor-pointer px-2 border-b-2 border-transparent hover:border-green-600"
-                    onClick={() =>
-                      setOpenDropdown((prev) =>
-                        prev === link.id ? null : link.id
-                      )
-                    }
+                    onClick={() => setOpenDropdown(openDropdown === link.id ? null : link.id)}
+                    className={`flex items-center gap-1 px-2 py-1 border-b-2 transition duration-300 ${
+                      pathname === link.href || activeSection === link.href
+                        ? "border-green-600"
+                        : "border-transparent hover:border-green-600"
+                    }`}
                   >
                     {link.title}
                     <RiArrowDownSLine
-                      className={`text-lg transition-transform duration-300 ${
-                        openDropdown === link.id ? "rotate-180" : "rotate-0"
+                      className={`transition-transform duration-300 ${
+                        openDropdown === link.id ? "rotate-180" : ""
                       }`}
                     />
                   </button>
-
-                  {/* Dropdown Menu (Controlled by openDropdown) */}
                   {openDropdown === link.id && (
                     <div
                       ref={dropdownRef}
-                      className="absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md overflow-hidden z-50"
                     >
                       <ul>
                         {link.dropdown.map((item) => (
@@ -80,15 +114,16 @@ const Header = () => {
                   )}
                 </li>
               ) : (
-                <li
-                  key={link.id}
-                  className={`border-b-2 transition-all duration-300 ${
-                    pathname === link.href
-                      ? "border-green-600"
-                      : "border-transparent hover:border-green-600"
-                  }`}
-                >
-                  <Link className="p-[10px]" href={link.href}>
+                <li key={link.id}>
+                  <Link
+                    href={link.href}
+                    onClick={(e) => handleScroll(e, link.href)}
+                    className={`px-3 py-1 border-b-2 transition ${
+                      pathname === link.href
+                        ? "border-green-600"
+                        : "border-transparent hover:border-green-600"
+                    }`}
+                  >
                     {link.title}
                   </Link>
                 </li>
@@ -98,53 +133,43 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-4">
-          <button
-            className="cursor-pointer"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+        <div className="lg:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <nav
-        className={`${
-          menuOpen ? "block" : "hidden"
-        } lg:hidden transition-all duration-300 z-50 bg-white`}
-      >
-        <ul className="flex flex-col items-center text-base gap-4 p-4">
+      <nav className={`${menuOpen ? "block" : "hidden"} lg:hidden bg-white`}>
+        <ul className="flex flex-col gap-4 px-4 pb-4">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <li key={link.id} className="relative w-full text-center">
+              <li key={link.id}>
                 <button
-                  className="flex-center gap-1 w-full px-4 py-2"
                   onClick={() =>
-                    setOpenDropdown((prev) =>
-                      prev === link.id ? null : link.id
-                    )
+                    setOpenDropdown(openDropdown === link.id ? null : link.id)
                   }
+                  className="flex justify-between w-full items-center py-2"
                 >
                   {link.title}
                   <RiArrowDownSLine
-                    className={`text-lg transition-transform duration-300 ${
-                      openDropdown === link.id ? "rotate-180" : "rotate-0"
+                    className={`transition-transform duration-300 ${
+                      openDropdown === link.id ? "rotate-180" : ""
                     }`}
                   />
                 </button>
-
                 {openDropdown === link.id && (
-                  <ul className="block w-full space-y-4">
+                  <ul className="ml-4 space-y-2">
                     {link.dropdown.map((item) => (
                       <li key={item.id}>
                         <Link
                           href={item.href}
-                          className="px-4 py-2 hover:border-b-2 hover:border-green-600"
                           onClick={() => {
                             setOpenDropdown(null);
                             setMenuOpen(false);
                           }}
+                          className="block py-1 text-sm hover:text-green-600"
                         >
                           {item.title}
                         </Link>
@@ -154,11 +179,11 @@ const Header = () => {
                 )}
               </li>
             ) : (
-              <li key={link.id} className="w-full text-center">
+              <li key={link.id}>
                 <Link
                   href={link.href}
-                  className="px-4 py-2 hover:border-b-2 hover:border-green-600  "
                   onClick={() => setMenuOpen(false)}
+                  className="block py-2 hover:text-green-600"
                 >
                   {link.title}
                 </Link>
