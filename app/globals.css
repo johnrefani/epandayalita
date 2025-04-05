@@ -122,6 +122,11 @@
   }
 }
 
+@layer components {
+  .card {
+    @apply indent-6 text-xs sm:text-sm lg:text-base text-justify;
+  }
+}
 /* Margin utilities */
 .mobile-margin {
   margin: var(--mobile-margin);

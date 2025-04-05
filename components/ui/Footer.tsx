@@ -52,7 +52,7 @@ const Footer = () => {
                     </h3>
                     <Link
                       href={section.contacts[0].href}
-                      className="text-sm text-white hover:text-gray-200 transition-colors duration-200 break-all"
+                      className="text-sm text-white hover:text-gray-200 transition-colors duration-200 break-all text-nowrap"
                     >
                       {section.contacts[0].title}
                     </Link>
