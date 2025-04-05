@@ -1,7 +1,7 @@
 import { Footer, Header } from "@/lib/imports";
 import React from "react";
 import ResCard from "@/components/ui/ResCard";
-import { Entry } from "@/data/props";
+import { Entry } from "@/lib/props";
 
 async function fetchEntry(category: string, word: string): Promise<Entry> {
   const response = await fetch(

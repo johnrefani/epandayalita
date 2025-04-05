@@ -1,4 +1,4 @@
-import { ResCardProps } from "@/data/props";
+import { ResCardProps } from "@/lib/props";
 import Image from "next/image";
 import React from "react";
 import AudioPlayer from "./AudioPlayer";

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { RiArrowRightSLine } from 'react-icons/ri'
-import { CatCardProps } from '@/data/props'
+import { CatCardProps } from '@/lib/props'
 import { IoSearch } from "react-icons/io5";
 const CatCard = ({ title, pic ,speech, hasNoImage}: CatCardProps) => {
   return (
