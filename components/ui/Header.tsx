@@ -65,6 +65,7 @@ const DropdownMenu = ({
           ? "text-green-700 bg-green-50 font-medium"
           : "text-gray-700 hover:text-green-700 hover:bg-green-50"
       }`}
+      aria-label="Open dropdown menu"
       aria-expanded={isOpen}
       aria-haspopup="true"
     >
