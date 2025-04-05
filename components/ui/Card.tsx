@@ -108,6 +108,7 @@ const Card = () => {
           <button
             onClick={toggleContent}
             className="cursor-pointer text-gray-700 hover:text-green-700 hover:bg-green-100 rounded px-2 py-1 text-sm w-fit"
+            aria-label="Toggle content"
           >
             {isExpanded ? "See Less" : "See More"}
           </button>
