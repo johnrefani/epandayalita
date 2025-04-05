@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoSearch } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import { Entry } from "@/data/props";
+import { Entry } from "@/lib/props";
 import Link from "next/link";
 
 const Searchbar = () => {

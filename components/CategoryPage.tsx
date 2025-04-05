@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import CatCard from "@/components/ui/CatCard";
-import { Entry } from "@/data/props";
+import { Entry } from "@/lib/props";
 
 async function fetchCategoryEntries(category: string): Promise<Entry[]> {
   const response = await fetch(
