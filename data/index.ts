@@ -12,7 +12,7 @@ export const navLinks = [
     dropdown: [
       { id: 1, title: "Parts", href: "/part" },
       { id: 2, title: "Process", href: "/process" },
-      { id: 3, title: "Products", href: "/products" },
+      { id: 3, title: "Products", href: "/product" },
       { id: 4, title: "Tools & Materials", href: "/tools" },
     ],
   },
