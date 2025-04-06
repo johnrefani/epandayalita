@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { navLinks } from "@/data";
 
 interface NavLink {
@@ -18,7 +18,7 @@ interface NavLink {
 const Logo = () => (
   <Link 
     href="/" 
-    className="relative h-12 w-40 md:h-14 md:w-48 lg:h-16 lg:w-56 transition-opacity hover:opacity-90"
+    className="relative w-full h-10 md:h-11 lg:h-12"
     aria-label="Home"
   >
     <Image 
@@ -34,7 +34,7 @@ const Logo = () => (
 const MenuToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => (
   <button
     onClick={onClick}
-    className="p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 lg:hidden"
+    className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 lg:hidden"
     aria-label={isOpen ? "Close menu" : "Open menu"}
     aria-expanded={isOpen}
   >
@@ -42,13 +42,13 @@ const MenuToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void 
   </button>
 );
 
-const DropdownMenu = ({ 
-  link, 
-  isOpen, 
-  onToggle, 
-  pathname, 
+const DropdownMenu = ({
+  link,
+  isOpen,
+  onToggle,
+  pathname,
   activeSection,
-  onItemClick 
+  onItemClick
 }: {
   link: NavLink;
   isOpen: boolean;
@@ -57,57 +57,75 @@ const DropdownMenu = ({
   activeSection: string;
   onItemClick?: () => void;
 }) => (
-  <div className="relative w-full">
+  <div className="relative group">
     <button
-      onClick={(e) => {
-        e.preventDefault();
-        onToggle();
-      }}
-      className={`flex items-center gap-1 px-4 py-3 w-full text-left justify-between ${
+      onClick={onToggle}
+      className={`flex items-center justify-between gap-1 px-4 py-2 w-full rounded-lg transition-all duration-200 ${
         pathname === link.href || activeSection === link.href
-          ? "text-green-700 bg-green-50 font-medium"
-          : "text-gray-700 hover:text-green-700 hover:bg-green-50"
+          ? "text-green-600 bg-green-50 font-medium"
+          : "text-gray-700 hover:text-green-600 hover:bg-green-50 group-hover:text-green-600"
       }`}
-      aria-label={`Toggle ${link.title} dropdown menu`}
-      aria-expanded={isOpen}
       aria-haspopup="true"
+      aria-expanded={isOpen}
+      aria-controls={`dropdown-${link.id}`}
     >
       {link.title}
-      <RiArrowDownSLine
-        className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+      <RiArrowDropDownLine
+        className={`transition-transform duration-300 text-xl ${
+          isOpen ? "rotate-180" : "rotate-0"
+        }`}
       />
     </button>
-    {isOpen && link.dropdown && (
-      <ul className="w-full bg-white lg:absolute lg:top-full lg:mt-1 lg:min-w-[200px] lg:shadow-lg lg:rounded-md lg:border lg:border-gray-100">
-        {link.dropdown.map((item) => (
-          <li key={item.id}>
-            <Link
-              href={item.href}
-              className={`block px-4 py-2.5 text-sm transition-colors ${
-                pathname === item.href
-                  ? "bg-green-100 text-green-800"
-                  : "text-gray-700 hover:bg-green-50"
-              }`}
-              onClick={onItemClick}
-            >
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    )}
+    <div
+      className={`${
+        isOpen ? "block" : "hidden"
+      } lg:absolute lg:top-full lg:left-0 lg:mt-1 lg:bg-white lg:shadow-lg lg:rounded-lg lg:min-w-[200px] lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:transition-all lg:duration-200`}
+      id={`dropdown-${link.id}`}
+      role="menu"
+    >
+      {link.dropdown?.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          onClick={onItemClick}
+          className="block px-4 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 first:rounded-t-lg last:rounded-b-lg transition-colors duration-200 lg:whitespace-nowrap"
+          role="menuitem"
+        >
+          {item.title}
+        </Link>
+      ))}
+    </div>
   </div>
 );
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpenId, setDropdownOpenId] = useState<number | null>(null);
   const pathname = usePathname();
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = (id: number) => {
+    setDropdownOpenId(dropdownOpenId === id ? null : id);
+  };
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      setDropdownOpenId(null);
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setDropdownOpenId(null);
+  };
 
   const handleNavClick = (e: React.MouseEvent, link: string) => {
     e.preventDefault();
@@ -121,129 +139,62 @@ const Header = () => {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const sections = navLinks.map((link) => link.href).filter((href) => href.startsWith("#"));
-
-    const handleScrollEvent = () => {
-      setIsScrolled(window.scrollY > 10);
-      const current = sections.find((href) => {
-        const section = document.querySelector(href);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      }) || "";
-      setActiveSection(current);
-    };
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
-      }
-      if (mobileMenuRef.current && 
-          !mobileMenuRef.current.contains(e.target as Node) && 
-          !(e.target as HTMLElement).closest('button[aria-label="Toggle menu"]')) {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScrollEvent);
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      window.removeEventListener("scroll", handleScrollEvent);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <header 
-      className={`fixed top-0 left-0 z-50 w-full bg-white transition-all duration-300 ${
-        isScrolled ? "shadow-md" : "shadow-sm"
-      }`}
-    >
-      <div className="mx-[1rem] md:mx-[3.75rem] lg:mx-[6.25rem] xl:mx-[7.5rem]">
-        <div className="flex justify-between items-center py-4">
-          <Logo />
-          <nav className="hidden lg:block">
-            <ul className="flex gap-4 xl:gap-6 items-center">
-              {navLinks.map((link) => (
-                <li key={link.id} className="relative">
-                  {link.dropdown ? (
-                    <div
-                      onMouseEnter={() => setOpenDropdown(link.id)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                      ref={dropdownRef}
-                    >
-                      <DropdownMenu
-                        link={link}
-                        isOpen={openDropdown === link.id}
-                        onToggle={() => setOpenDropdown(openDropdown === link.id ? null : link.id)}
-                        pathname={pathname}
-                        activeSection={activeSection}
-                        onItemClick={() => setOpenDropdown(null)}
-                      />
-                    </div>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={`px-3 py-2 rounded-md transition-colors ${
-                        pathname === link.href || activeSection === link.href
-                          ? "text-green-700 bg-green-50 font-medium"
-                          : "text-gray-700 hover:text-green-700 hover:bg-green-50"
-                      }`}
-                    >
-                      {link.title}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <MenuToggle isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
-        </div>
-
-        <div
-          ref={mobileMenuRef}
-          className={`lg:hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+    <header className="w-full bg-white border-b border-gray-100 fixed top-0 left-0 z-50">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <Logo />
+        <MenuToggle isOpen={menuOpen} onClick={() => setMenuOpen((prev) => !prev)} />
+        <nav
+          className={`${
+            menuOpen ? "flex" : "hidden"
+          } lg:flex lg:items-center absolute lg:relative top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent border-t lg:border-0 border-gray-100 lg:mt-0 py-4 lg:py-0 transition-all duration-300`}
+          ref={menuRef}
         >
-          <nav className="pb-4">
-            <ul className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.id} className="w-full">
-                  {link.dropdown ? (
-                    <DropdownMenu
-                      link={link}
-                      isOpen={openDropdown === link.id}
-                      onToggle={() => setOpenDropdown(openDropdown === link.id ? null : link.id)}
-                      pathname={pathname}
-                      activeSection={activeSection}
-                      onItemClick={() => {
-                        setOpenDropdown(null);
-                        setMenuOpen(false);
-                      }}
-                    />
+          <ul className="flex flex-col lg:flex-row w-full lg:w-auto gap-2 lg:gap-4 px-4 lg:px-0">
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <li key={link.id} className="w-full lg:w-auto">
+                  <DropdownMenu
+                    link={link}
+                    isOpen={dropdownOpenId === link.id}
+                    onToggle={() => toggleDropdown(link.id)}
+                    pathname={pathname}
+                    activeSection={activeSection}
+                    onItemClick={handleLinkClick}
+                  />
+                </li>
+              ) : (
+                <li key={link.id}>
+                  {link.id === 1 || link.id === 3 ? (
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
+                        pathname === link.href || activeSection === link.href
+                          ? "text-green-600 bg-green-50 font-medium"
+                          : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                      }`}
+                    >
+                      {link.title}
+                    </a>
                   ) : (
                     <Link
                       href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={`block px-4 py-3 w-full ${
+                      onClick={handleLinkClick}
+                      className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
                         pathname === link.href || activeSection === link.href
-                          ? "text-green-700 bg-green-50"
-                          : "text-gray-700 hover:text-green-700"
+                          ? "text-green-600 bg-green-50 font-medium"
+                          : "text-gray-700 hover:text-green-600 hover:bg-green-50"
                       }`}
                     >
                       {link.title}
                     </Link>
                   )}
                 </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+              )
+            )}
+          </ul>
+        </nav>
       </div>
     </header>
   );
