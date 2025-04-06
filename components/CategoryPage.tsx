@@ -5,7 +5,7 @@ import { Entry } from "@/lib/props";
 
 async function fetchCategoryEntries(category: string): Promise<Entry[]> {
   const response = await fetch(
-    `http://localhost:3000/api/entries/category/${encodeURIComponent(category)}`,
+    `http://epandayalita.vercel.app/api/entries/category/${encodeURIComponent(category)}`,
     { cache: "no-store" }
   );
   if (!response.ok) {
