@@ -17,7 +17,7 @@ interface NavLink {
 
 const Logo = () => (
   <Link 
-    href="/home" 
+    href="/" 
     className="relative h-12 w-40 md:h-14 md:w-48 lg:h-16 lg:w-56 transition-opacity hover:opacity-90"
     aria-label="Home"
   >

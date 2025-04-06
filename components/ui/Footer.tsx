@@ -6,13 +6,13 @@ import { footerLinks } from "@/data";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-green-700 text-white">
+    <footer className="w-full bg-green-700 text-white" id="footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-2 xl:col-span-1 flex justify-center md:justify-start mb-8 xl:mb-0">
             <div className="relative w-40 h-20">
               <Image
-                className="bg-white rounded-lg p-2"
+                className="bg-white rounded-lg p-2" 
                 src="/logo-footer.svg"
                 alt="Company Logo"
                 fill

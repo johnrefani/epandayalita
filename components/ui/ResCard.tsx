@@ -14,7 +14,7 @@ const ResCard = ({
   pronunciation,
 }: ResCardProps) => {
   return (
-    <section className="relative flex justify-center pt-16 mt-16">
+    <section className="relative flex justify-center pt-16 mt-16 my-32">
       <div className="absolute inset-0 grid grid-rows-[50%_50%]">
         <div className="bg-green-700"></div>
         <div className=""></div>
