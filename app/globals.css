@@ -1,27 +1,142 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+/* Base styles */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Green palette */
+    --color-green-50: #eefbf5;
+    --color-green-100: #d7f4e6;
+    --color-green-200: #b2e8d1;
+    --color-green-300: #80d5b6;
+    --color-green-400: #4bbc97;
+    --color-green-500: #29a07d;
+    --color-green-600: #1a8164;
+    --color-green-700: #135e4b;
+    --color-green-800: #135242;
+    --color-green-900: #104438;
+    --color-green-950: #082620;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Spacing */
+    --mobile-margin: 1rem;
+    --tablet-margin: 3.75rem;
+    --laptop-margin: 6.25rem;
+    --desktop-margin: 7.5rem;
+
+ 
+  }
+  h1, h2,h3,h4,h5,h6, p ,ul ,li, button{
+    color: var(--color-green-950);
+  }
+  body {
+    font-family: var(--font-merriweather), serif;
+    background-color: whitesmoke;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .flex-center {
+    @apply flex items-center justify-center;
   }
+
+  /* Primary/Secondary utilities */
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  /* Green Color Utilities */
+  .text-green-50 {
+    color: var(--color-green-50);
+  }
+  .text-green-100 {
+    color: var(--color-green-100);
+  }
+  .text-green-200 {
+    color: var(--color-green-200);
+  }
+  .text-green-300 {
+    color: var(--color-green-300);
+  }
+  .text-green-400 {
+    color: var(--color-green-400);
+  }
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-green-700 {
+    color: var(--color-green-700);
+  }
+  .text-green-800 {
+    color: var(--color-green-800);
+  }
+  .text-green-900 {
+    color: var(--color-green-900);
+  }
+  .text-green-950 {
+    color: var(--color-green-950);
+  }
+
+  .bg-green-50 {
+    background-color: var(--color-green-50);
+  }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-green-200 {
+    background-color: var(--color-green-200);
+  }
+  .bg-green-300 {
+    background-color: var(--color-green-300);
+  }
+  .bg-green-400 {
+    background-color: var(--color-green-400);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-green-600 {
+    background-color: var(--color-green-600);
+  }
+  .bg-green-700 {
+    background-color: var(--color-green-700);
+  }
+  .bg-green-800 {
+    background-color: var(--color-green-800);
+  }
+  .bg-green-900 {
+    background-color: var(--color-green-900);
+  }
+  .bg-green-950 {
+    background-color: var(--color-green-950);
+  }
+}
+
+@layer components {
+  .card {
+    @apply indent-6 text-xs sm:text-sm lg:text-base text-justify;
+  }
+}
+/* Margin utilities */
+.mobile-margin {
+  margin: var(--mobile-margin);
+}
+.tablet-margin {
+  margin: var(--tablet-margin);
+}
+.laptop-margin {
+  margin: var(--laptop-margin);
+}
+.desktop-margin {
+  margin: var(--desktop-margin);
 }
