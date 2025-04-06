@@ -57,15 +57,18 @@ const DropdownMenu = ({
   activeSection: string;
   onItemClick?: () => void;
 }) => (
-  <>
+  <div className="relative w-full">
     <button
-      onClick={onToggle}
-      className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors w-full text-left justify-between ${
+      onClick={(e) => {
+        e.preventDefault();
+        onToggle();
+      }}
+      className={`flex items-center gap-1 px-4 py-3 w-full text-left justify-between ${
         pathname === link.href || activeSection === link.href
           ? "text-green-700 bg-green-50 font-medium"
           : "text-gray-700 hover:text-green-700 hover:bg-green-50"
       }`}
-      aria-label="Open dropdown menu"
+      aria-label={`Toggle ${link.title} dropdown menu`}
       aria-expanded={isOpen}
       aria-haspopup="true"
     >
@@ -75,7 +78,7 @@ const DropdownMenu = ({
       />
     </button>
     {isOpen && link.dropdown && (
-      <ul className="absolute top-full left-0 mt-1 min-w-[200px] bg-white shadow-lg rounded-md overflow-hidden z-50 border border-gray-100 lg:ml-4">
+      <ul className="w-full bg-white lg:absolute lg:top-full lg:mt-1 lg:min-w-[200px] lg:shadow-lg lg:rounded-md lg:border lg:border-gray-100">
         {link.dropdown.map((item) => (
           <li key={item.id}>
             <Link
@@ -83,7 +86,7 @@ const DropdownMenu = ({
               className={`block px-4 py-2.5 text-sm transition-colors ${
                 pathname === item.href
                   ? "bg-green-100 text-green-800"
-                  : "hover:bg-green-50 text-gray-700"
+                  : "text-gray-700 hover:bg-green-50"
               }`}
               onClick={onItemClick}
             >
@@ -93,7 +96,7 @@ const DropdownMenu = ({
         ))}
       </ul>
     )}
-  </>
+  </div>
 );
 
 const Header = () => {
@@ -203,14 +206,14 @@ const Header = () => {
 
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-            menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          className={`lg:hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <nav className="pb-4">
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                <li key={link.id} className="border-b border-gray-100 last:border-b-0">
+                <li key={link.id} className="w-full">
                   {link.dropdown ? (
                     <DropdownMenu
                       link={link}
@@ -227,7 +230,7 @@ const Header = () => {
                     <Link
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className={`block px-4 py-3 ${
+                      className={`block px-4 py-3 w-full ${
                         pathname === link.href || activeSection === link.href
                           ? "text-green-700 bg-green-50"
                           : "text-gray-700 hover:text-green-700"
