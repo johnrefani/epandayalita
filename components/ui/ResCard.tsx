@@ -14,13 +14,13 @@ const ResCard = ({
   pronunciation,
 }: ResCardProps) => {
   return (
-    <section className="relative flex justify-center pt-16 mt-16 my-32">
+    <section className="relative flex justify-center pt-16 mt-16">
       <div className="absolute inset-0 grid grid-rows-[50%_50%]">
         <div className="bg-blue-700"></div>
         <div className=""></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-4 sm:mx-6 lg:mx-8 px-4 sm:px-6 lg:px-8 py-8 rounded-lg shadow-xl bg-white mb-12">
+      <div className="relative z-10 w-full max-w-5xl mx-4 sm:mx-6 lg:mx-8 px-4 sm:px-6 lg:px-8 py-8 rounded-lg shadow-xl bg-white">
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
           <div className="flex-shrink-0 w-full sm:w-64 md:w-72 lg:w-80 h-64 md:h-72 lg:h-80 relative">
             {image ? (

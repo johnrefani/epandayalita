@@ -50,3 +50,16 @@ export const footerLinks = [
   
 ];
 
+export const terms = [
+  { id: 1, word: 'Maso', link: '/tools/maso' },
+  { id: 2, word: 'Mulye', link: '/tools/mulye' },
+  { id: 3, word: 'Palihan', link: '/tools/palihan' },
+  { id: 4, word: 'Balalong', link: '/tools/balalong' },
+  { id: 5, word: 'Kinabase', link: '/product/kinabase' },
+  { id: 6, word: 'Sungot-hipon', link: '/product/sungot-hipon' },
+  { id: 7, word: 'Gapas', link: '/product/gapas' },
+  { id: 8, word: 'Ginunting', link: '/product/ginunting' },
+  { id: 9, word: 'Lukas', link: '/process/lukas' },
+  { id: 10, word: 'Mulyonan', link: '/tools/mulyonan' },
+];
+
