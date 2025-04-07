@@ -42,7 +42,7 @@ const AudioPlayer = ({ audioUrl }: { audioUrl: string }) => {
       aria-label={isPlaying ? "Stop audio" : "Play audio"}
     >
       <HiSpeakerWave  
-        className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 ${isPlaying ? "text-green-500" : "text-green-950"}`} 
+        className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 ${isPlaying ? "text-blue-500" : "text-blue-950"}`} 
       />
     </button>
   );

@@ -16,7 +16,7 @@ const ResCard = ({
   return (
     <section className="relative flex justify-center pt-16 mt-16 my-32">
       <div className="absolute inset-0 grid grid-rows-[50%_50%]">
-        <div className="bg-green-700"></div>
+        <div className="bg-blue-700"></div>
         <div className=""></div>
       </div>
 
@@ -25,7 +25,7 @@ const ResCard = ({
           <div className="flex-shrink-0 w-full sm:w-64 md:w-72 lg:w-80 h-64 md:h-72 lg:h-80 relative">
             {image ? (
               <Image
-                className="border-2 border-green-400 rounded-md object-contain bg-gray-100"
+                className="border-2 border-blue-400 rounded-md object-contain bg-gray-100"
                 src={image}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
@@ -33,9 +33,9 @@ const ResCard = ({
                 priority
               />
             ) : (
-              <div className="w-full h-full border border-green-400 rounded-md flex items-center justify-center text-gray-500 text-sm md:text-base">
+              <div className="w-full h-full border border-blue-400 rounded-md flex items-center justify-center text-gray-500 text-sm md:text-base">
                 <IoSearch 
-                  className="w-full h-auto object-contain p-6 transition-transform duration-300 group-hover:scale-105 text-green-800"
+                  className="w-full h-auto object-contain p-6 transition-transform duration-300 group-hover:scale-105 text-blue-800"
                 />
               </div>
             )}
@@ -43,7 +43,7 @@ const ResCard = ({
 
           <div className="flex-1 flex flex-col gap-4">
             <div className="flex items-center gap-3 sm:gap-6">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-950">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-950">
                 {word}
               </h1>
               {audio ? (
@@ -53,14 +53,14 @@ const ResCard = ({
               )}
             </div>
 
-            <h2 className="w-fit text-sm sm:text-base lg:text-lg text-green-700 bg-green-100 rounded-md border border-green-300 py-1 px-3 shadow-sm">
+            <h2 className="w-fit text-sm sm:text-base lg:text-lg text-blue-700 bg-blue-100 rounded-md border border-blue-300 py-1 px-3 shadow-sm">
               {pronunciation || "N/A"}
             </h2>
 
             <div className="border-t border-gray-200 my-2 md:my-4"></div>
 
             <div className="">
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-green-800">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-800">
                 {speech || "Unknown"}
               </h3>
               <p className="text-sm sm:text-base lg:text-lg mt-3 text-gray-600 leading-relaxed">
