@@ -20,7 +20,7 @@ const CatCard = ({ title, pic ,speech, hasNoImage}: CatCardProps) => {
         
         <div className='flex flex-col'>
             <h1 className='text-base font-bold'>{title}</h1>
-            <h2 className='text-sm opacity-60 text-nowrap'>{speech}</h2>
+            <h2 className='text-sm text-blue-500 text-nowrap'>{speech}</h2>
         </div>
         </div>
         
