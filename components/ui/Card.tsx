@@ -29,7 +29,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="group bg-green-50 flex flex-col lg:flex-row w-full max-w-7xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
+    <div className="group bg-blue-50 flex flex-col lg:flex-row w-full max-w-7xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
       {/* VIDEO SECTION */}
       <div className="bg-white p-4 sm:p-6 lg:p-8 flex items-center justify-center relative">
         <div className="relative w-full max-w-[600px] aspect-video">
@@ -50,10 +50,10 @@ const Card = () => {
       </div>
 
       {/* TEXT SECTION */}
-      <div className="bg-green-50 p-4 sm:p-6 lg:p-8 flex max-w-3xl flex-col justify-center space-y-4">
+      <div className="bg-blue-50 p-4 sm:p-6 lg:p-8 flex max-w-3xl flex-col justify-center space-y-4">
         <div className="space-y-3">
           <div className="space-y-2">
-            <span className="bg-green-900 w-12 h-1 inline-block rounded-full"></span>
+            <span className="bg-blue-900 w-12 h-1 inline-block rounded-full"></span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">
               Tungkol sa E-PANDAYALITA
             </h2>
@@ -107,14 +107,14 @@ const Card = () => {
           {/* TOGGLE BUTTON */}
           <button
             onClick={toggleContent}
-            className="cursor-pointer text-gray-700 hover:text-green-700 hover:bg-green-100 rounded px-2 py-1 text-sm w-fit"
+            className="cursor-pointer text-gray-700 hover:text-blue-700 hover:bg-blue-100 rounded px-2 py-1 text-sm w-fit"
             aria-label="Toggle content"
           >
             {isExpanded ? "See Less" : "See More"}
           </button>
         </div>
 
-        <div className="hidden lg:block w-20 h-1 bg-green-200 rounded-full self-start"></div>
+        <div className="hidden lg:block w-20 h-1 bg-blue-200 rounded-full self-start"></div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { footerLinks } from "@/data";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-green-700 text-white" id="footer">
+    <footer className="w-full bg-blue-700 text-white" id="footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-2 xl:col-span-1 flex justify-center md:justify-start mb-8 xl:mb-0">
@@ -73,7 +73,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-green-600 text-center">
+        <div className="mt-12 pt-8 border-t border-blue-600 text-center">
           <p className="text-sm text-gray-200">
             © {new Date().getFullYear()} E-Pandayalita. All rights reserved.
           </p>

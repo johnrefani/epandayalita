@@ -3,18 +3,20 @@
 /* Base styles */
 @layer base {
   :root {
-    /* Green palette */
-    --color-green-50: #eefbf5;
-    --color-green-100: #d7f4e6;
-    --color-green-200: #b2e8d1;
-    --color-green-300: #80d5b6;
-    --color-green-400: #4bbc97;
-    --color-green-500: #29a07d;
-    --color-green-600: #1a8164;
-    --color-green-700: #135e4b;
-    --color-green-800: #135242;
-    --color-green-900: #104438;
-    --color-green-950: #082620;
+    /* Blue palette */
+    --color-blue-50: #efeeff;
+    --color-blue-100: #e2e0ff;
+    --color-blue-200: #cac6ff;
+    --color-blue-300: #aaa4fd;
+    --color-blue-400: #877ffa;
+    --color-blue-500: #6a61f3;
+    --color-blue-600: #4e44e7;
+    --color-blue-700: #3f36cc;
+    --color-blue-800: #352ea5;
+    --color-blue-900: #322d82;
+    --color-blue-950: #262262;
+    
+    
 
     /* Spacing */
     --mobile-margin: 1rem;

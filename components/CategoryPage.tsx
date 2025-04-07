@@ -41,8 +41,8 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 
   return (
       <section className="flex flex-col mt-20 ">
-        <div className="flex-center py-9 bg-green-800 -mx-[1rem] md:-mx-[3.75rem] lg:-mx-[6.25rem] xl:-mx-[7.5rem]">
-          <h1 className="text-3xl font-bold text-green-50 uppercase">
+        <div className="flex-center py-9 bg-blue-800 -mx-[1rem] md:-mx-[3.75rem] lg:-mx-[6.25rem] xl:-mx-[7.5rem]">
+          <h1 className="text-3xl font-bold text-blue-50 uppercase">
             {formattedCategory}
           </h1>
         </div>
