@@ -10,7 +10,7 @@ const Main = () => {
             <p className="text-2xl md:text-3xl font-semibold">
               Magandang Araw!
             </p>
-            <p className="text-2xl md:text-3xl text-green-700 font-semibold">
+            <p className="text-2xl md:text-3xl text-blue-700 font-semibold">
               Anong Salita ang iyong hanap?
             </p>
           </div>

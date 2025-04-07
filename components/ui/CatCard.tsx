@@ -9,9 +9,9 @@ const CatCard = ({ title, pic ,speech, hasNoImage}: CatCardProps) => {
         <div className='flex items-center gap-4'>
           {
             hasNoImage ? (
-              <IoSearch className='border-1 rounded-sm border-green-800 size-16 text-green-800'/>
+              <IoSearch className='border-1 rounded-sm border-blue-800 size-16 text-blue-800'/>
             ):(
-              <div className='relative border-1 rounded-sm border-green-800 size-16'>
+              <div className='relative border-1 rounded-sm border-blue-800 size-16'>
                 <Image src={pic} alt="cat" fill objectFit='cover'/>
               </div>
             
@@ -24,7 +24,7 @@ const CatCard = ({ title, pic ,speech, hasNoImage}: CatCardProps) => {
         </div>
         </div>
         
-        <RiArrowRightSLine size={36} className='h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 text-green-950' />
+        <RiArrowRightSLine size={36} className='h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 text-blue-950' />
     </div>
   )
 }

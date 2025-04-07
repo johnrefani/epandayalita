@@ -34,7 +34,7 @@ const Logo = () => (
 const MenuToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => (
   <button
     onClick={onClick}
-    className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 lg:hidden"
+    className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 lg:hidden"
     aria-label={isOpen ? "Close menu" : "Open menu"}
     aria-expanded={isOpen}
   >
@@ -62,8 +62,8 @@ const DropdownMenu = ({
       onClick={onToggle}
       className={`flex items-center justify-between gap-1 px-4 py-2 w-full rounded-lg transition-all duration-200 ${
         pathname === link.href || activeSection === link.href
-          ? "text-green-600 bg-green-50 font-medium"
-          : "text-gray-700 hover:text-green-600 hover:bg-green-50 group-hover:text-green-600"
+          ? "text-blue-600 bg-blue-50 font-medium"
+          : "text-blue-50 hover:text-blue-600 hover:bg-blue-50 group-hover:text-blue-600"
       }`}
       aria-haspopup="true"
       aria-expanded={isOpen}
@@ -79,7 +79,7 @@ const DropdownMenu = ({
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } lg:absolute lg:top-full lg:left-0 lg:mt-1 lg:bg-white lg:shadow-lg lg:rounded-lg lg:min-w-[200px] lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:transition-all lg:duration-200`}
+      } lg:absolute lg:top-full lg:left-0 lg:mt-1 lg:bg-blue-950 lg:shadow-lg lg:rounded-lg lg:min-w-[200px] lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:transition-all lg:duration-200`}
       id={`dropdown-${link.id}`}
       role="menu"
     >
@@ -88,7 +88,7 @@ const DropdownMenu = ({
           key={item.id}
           href={item.href}
           onClick={onItemClick}
-          className="block px-4 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 first:rounded-t-lg last:rounded-b-lg transition-colors duration-200 lg:whitespace-nowrap"
+          className="block px-4 py-2 text-sm text-blue-50 hover:text-blue-600 hover:bg-blue-50 first:rounded-t-lg last:rounded-b-lg transition-colors duration-200 lg:whitespace-nowrap"
           role="menuitem"
         >
           {item.title}
@@ -140,14 +140,14 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-white border-b border-gray-100 fixed top-0 left-0 z-50">
+    <header className="w-full bg-blue-950 border-b border-gray-100 fixed top-0 left-0 z-50">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Logo />
         <MenuToggle isOpen={menuOpen} onClick={() => setMenuOpen((prev) => !prev)} />
         <nav
           className={`${
             menuOpen ? "flex" : "hidden"
-          } lg:flex lg:items-center absolute lg:relative top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent border-t lg:border-0 border-gray-100 lg:mt-0 py-4 lg:py-0 transition-all duration-300`}
+          } lg:flex lg:items-center absolute lg:relative top-full left-0 w-full lg:w-auto bg-blue-950 lg:bg-transparent border-t lg:border-0 border-gray-100 lg:mt-0 py-4 lg:py-0 transition-all duration-300`}
           ref={menuRef}
         >
           <ul className="flex flex-col lg:flex-row w-full lg:w-auto gap-2 lg:gap-4 px-4 lg:px-0">
@@ -171,8 +171,8 @@ const Header = () => {
                       onClick={(e) => handleNavClick(e, link.href)}
                       className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
                         pathname === link.href || activeSection === link.href
-                          ? "text-green-600 bg-green-50 font-medium"
-                          : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                          ? "text-blue-600 bg-blue-50 font-medium"
+                          : "text-blue-50 hover:text-blue-600 hover:bg-blue-50"
                       }`}
                     >
                       {link.title}
@@ -183,8 +183,8 @@ const Header = () => {
                       onClick={handleLinkClick}
                       className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
                         pathname === link.href || activeSection === link.href
-                          ? "text-green-600 bg-green-50 font-medium"
-                          : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                          ? "text-blue-600 bg-blue-50 font-medium"
+                          : "text-blue-50 hover:text-blue-600 hover:bg-blue-50"
                       }`}
                     >
                       {link.title}

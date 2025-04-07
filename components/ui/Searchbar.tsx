@@ -75,13 +75,13 @@ const Searchbar = () => {
   return (
     <div
       className={`w-full md:w-[600px] lg:w-[700px] shadow-lg [box-shadow:0_0_8px_2px_rgba(178,232,209,0.75)] rounded-2xl transition-all duration-300 ${
-        results.length > 0 ? "bg-white border-2 border-green-200" : "bg-transparent"
+        results.length > 0 ? "bg-white border-2 border-blue-200" : "bg-transparent"
       }`}
     >
       <div className="flex items-center px-4 md:px-6 h-10 md:h-12 lg:h-14">
         <input
           ref={inputRef}
-          className="w-full h-full text-green-950 outline-none bg-transparent text-sm md:text-base px-2 md:px-4 placeholder-gray-400"
+          className="w-full h-full text-blue-950 outline-none bg-transparent text-sm md:text-base px-2 md:px-4 placeholder-gray-400"
           type="text"
           placeholder="Search..."
           value={query}
@@ -89,7 +89,7 @@ const Searchbar = () => {
           onKeyDown={handleKeyDown}
         />
         <IoSearch
-          className="w-6 h-6 md:w-8 md:h-8 ml-2 md:ml-4 flex-shrink-0 hover:scale-110 transition-transform text-green-300"
+          className="w-6 h-6 md:w-8 md:h-8 ml-2 md:ml-4 flex-shrink-0 hover:scale-110 transition-transform text-blue-300"
         />
       </div>
 
@@ -107,7 +107,7 @@ const Searchbar = () => {
                   ref={(el) => {
                     resultRefs.current[index] = el;
                   }}
-                  className={`flex items-center justify-between text-green-900 py-2 hover:bg-gray-100 cursor-pointer w-full ${
+                  className={`flex items-center justify-between text-blue-900 py-2 hover:bg-gray-100 cursor-pointer w-full ${
                     selectedIndex === index ? "bg-gray-200" : ""
                   }`}
                   prefetch={true}
