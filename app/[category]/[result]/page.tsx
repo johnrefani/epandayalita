@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/lib/imports";
+import { Footer, Header, PopularTerms } from "@/lib/imports";
 import React from "react";
 import ResCard from "@/components/ui/ResCard";
 import { Entry } from "@/lib/props";
@@ -50,6 +50,8 @@ const Page = async ({ params }: { params: { category: string; result: string } }
         definition={entry.definition}
         audio={entry.audio}
       />
+
+      <PopularTerms />
 
       <Footer />
     </main>
