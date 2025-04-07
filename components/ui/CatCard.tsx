@@ -5,7 +5,7 @@ import { CatCardProps } from '@/lib/props'
 import { IoSearch } from "react-icons/io5";
 const CatCard = ({ title, pic ,speech, hasNoImage}: CatCardProps) => {
   return (
-    <div className='max-w-[370px] min-h-[100px] rounded-md shadow-lg [box-shadow:0_0_8px_2px_rgba(128,128,128,.20)] py-4 px-8 gap-16 flex items-center justify-between bg-white '>
+    <div className='max-w-[370px] min-h-[100px] rounded-md shadow-lg [box-shadow:0_0_8px_2px_rgba(128,128,128,.20)] py-4 px-4 md:px-8 gap-2 md:gap-16 flex items-center justify-between bg-white '>
         <div className='flex items-center gap-4'>
           {
             hasNoImage ? (
