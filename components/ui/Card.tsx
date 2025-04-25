@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef} from "react";
 
 const Card = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggleContent = () => setIsExpanded(!isExpanded);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -29,7 +27,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="group bg-blue-50 flex flex-col lg:flex-row w-full max-w-7xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
+    <section className="group bg-blue-50 flex flex-col lg:flex-row w-full max-w-7xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
       {/* VIDEO SECTION */}
       <div className="bg-white p-4 sm:p-6 lg:p-8 flex items-center justify-center relative">
         <div className="relative w-full max-w-[600px] aspect-video">
@@ -69,12 +67,6 @@ const Card = () => {
             sining ng pagpapanday ang mayamang wikang kaugnay ng metalworking.
           </p>
 
-          {/* TOGGLE SECTION */}
-          <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              isExpanded ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-            }`}
-          >
             <p className="card">
               Isang mahalagang bahagi ng tradisyunal na hanapbuhay sa ilang
               bahagi ng Pilipinas ang pagpapanday ng itak o blacksmithing,
@@ -86,7 +78,7 @@ const Card = () => {
               pagkakatay ng mga karne, pagkakawit, at pag-aani ng palay ang mga
               kagamitang nililikha ng mga magpapanday.
             </p>
-            <p className="card mt-3">
+            <p className="card">
               Nagtataglay rin ang mga panday ng natatanging kaalaman at
               kasanayan sa paglikha ng mga sandatang ito na may mataas na
               kalidad at artistikong halaga. Sa proseso ng pagpapanday,
@@ -104,19 +96,12 @@ const Card = () => {
             </p>
           </div>
 
-          {/* TOGGLE BUTTON */}
-          <button
-            onClick={toggleContent}
-            className="cursor-pointer text-gray-700 hover:text-blue-700 hover:bg-blue-100 rounded px-2 py-1 text-sm w-fit"
-            aria-label="Toggle content"
-          >
-            {isExpanded ? "See Less" : "See More"}
-          </button>
+      
         </div>
 
         <div className="hidden lg:block w-20 h-1 bg-blue-200 rounded-full self-start"></div>
-      </div>
-    </div>
+      </section>
+
   );
 };
 

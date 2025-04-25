@@ -34,7 +34,7 @@ export const footerLinks = [
     id:1,
     title: "Links",
     links: [
-      { id: 1, title: "About Us", href: "/about" },
+      { id: 1, title: "About Us", href: "/tungkol" },
       { id: 2, title: "Privacy Policy", href: "/privacy-policy" },
       { id: 3, title: "Terms of Use", href: "/terms-of-use" },
     ],
