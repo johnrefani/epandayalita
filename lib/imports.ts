@@ -9,4 +9,3 @@ export { default as PopularTerms } from "@/components/ui/PopularTerms";
 
 //components
 export { default as Main } from "@/components/Main";
-export { default as About } from "@/components/About";

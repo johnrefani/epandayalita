@@ -140,7 +140,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-blue-950 border-b border-gray-100 fixed top-0 left-0 z-50">
+    <header className="relative  w-full bg-blue-950 border-b border-gray-100 fixed top-0 left-0 z-50">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Logo />
         <MenuToggle isOpen={menuOpen} onClick={() => setMenuOpen((prev) => !prev)} />
