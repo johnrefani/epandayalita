@@ -2,29 +2,38 @@
 export const navLinks = [
   {
     id: 1,
-    title: "Home",
-    href: "#home",
+    title: "Pangunahing Pahina",
+    href: "#pangunahingpahina",
   },
   {
     id: 2,
-    title: "Categories",
-    href: "#categories",
+    title: "Mga Kategoriya",
+    href: "#mgakategoriya",
     dropdown: [
-      { id: 1, title: "Parts", href: "/part" },
-      { id: 2, title: "Process", href: "/process" },
-      { id: 3, title: "Products", href: "/product" },
-      { id: 4, title: "Tools & Materials", href: "/tools" },
+      { id: 1, title: "Mga Bahagi", href: "/part" },
+      { id: 2, title: "Proseso", href: "/process" },
+      { id: 3, title: "Mga Produkto", href: "/product" },
+      { id: 4, title: "Mga Kasangkapan at Materyales", href: "/tools" },
     ],
   },
   {
     id: 3,
-    title: "About",
-    href: "#about",
+    title: "Impormasyon",
+    href: "#impormasyon",
+    dropdown: [
+      { id: 1, title: "Mananaliksik", href: "/mananaliksik" },
+      { id: 2, title: "Tagapayo", href: "/tagapayo"},
+    ]
   },
   {
     id: 4,
-    title: "Contact",
-    href: "#footer",
+    title: "Tungkol",
+    href: "/tungkol",
+  },
+  {
+    id: 5,
+    title: "Makipag-ugnayan",
+    href: "#makipagugnayan",
   },
 ];
 
@@ -32,16 +41,16 @@ export const navLinks = [
 export const footerLinks = [
   {
     id:1,
-    title: "Links",
+    title: "Mga Ugnay",
     links: [
-      { id: 1, title: "About Us", href: "/tungkol" },
-      { id: 2, title: "Privacy Policy", href: "/privacy-policy" },
-      { id: 3, title: "Terms of Use", href: "/terms-of-use" },
+      { id: 1, title: "Tungkol sa Amin  ", href: "/tungkol" },
+      { id: 2, title: "Patakaran sa Pagkapribado", href: "/patakaransapagkapribado" },
+      { id: 3, title: "Mga Tuntunin ng Paggamit", href: "/mgatuntuninngpaggamit" },
     ],
   },
   {
     id:2,
-    title: "Contact",
+    title: "Makipag-ugnayan",
     contacts: [
       { id: 1, title: "info@pandayalitadictionary.com", href: "mailto:info@pandayalitadictionary.com" },
       { id: 2, title: "09519713078", href: "tel:09519713078" },
