@@ -48,7 +48,7 @@ const Card = () => {
       </div>
 
       {/* TEXT SECTION */}
-      <div className="bg-blue-50 p-4 sm:p-6 lg:p-8 flex max-w-3xl flex-col justify-center space-y-4">
+      <div className="bg-blue-50 p-4 sm:p-6 lg:p-8 flex max-w-2xl flex-col justify-center space-y-4">
         <div className="space-y-3">
           <div className="space-y-2">
             <span className="bg-blue-900 w-12 h-1 inline-block rounded-full"></span>
