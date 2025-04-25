@@ -83,7 +83,7 @@ const Searchbar = () => {
           ref={inputRef}
           className="w-full h-full text-blue-950 outline-none bg-transparent text-sm md:text-base px-2 md:px-4 placeholder-gray-400"
           type="text"
-          placeholder="Search..."
+          placeholder="Maghanap..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
