@@ -60,7 +60,7 @@ const DropdownMenu = ({
   <div className="relative group">
     <button
       onClick={onToggle}
-      className={`flex items-center justify-between gap-1 px-4 py-2 w-full rounded-lg transition-all duration-200 ${
+      className={`flex items-center cursor-pointer justify-between gap-1 px-4 py-2 w-full rounded-lg transition-all duration-200 ${
         pathname === link.href || activeSection === link.href
           ? "text-blue-600 bg-blue-50 font-medium"
           : "text-blue-50 hover:text-blue-600 hover:bg-blue-50 group-hover:text-blue-600"
@@ -150,10 +150,10 @@ const Header = () => {
           } lg:flex lg:items-center absolute lg:relative top-full left-0 w-full lg:w-auto bg-blue-950 lg:bg-transparent border-t lg:border-0 border-gray-100 lg:mt-0 py-4 lg:py-0 transition-all duration-300`}
           ref={menuRef}
         >
-          <ul className="flex flex-col lg:flex-row w-full lg:w-auto gap-2 lg:gap-4 px-4 lg:px-0">
+          <ul className="flex flex-col lg:flex-row w-full text-nowrap lg:w-auto gap-2 lg:gap-4 px-4 lg:px-0">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <li key={link.id} className="w-full lg:w-auto">
+                <li key={link.id} className="w-fit lg:w-auto">
                   <DropdownMenu
                     link={link}
                     isOpen={dropdownOpenId === link.id}

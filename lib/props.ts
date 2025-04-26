@@ -24,3 +24,10 @@ export interface ResCardProps {
     audio: string;
     category: string;
   }
+  export interface InfoCardProps {
+    id: number;
+    name: string;
+    pic: string;
+    description: string;
+   
+  }
