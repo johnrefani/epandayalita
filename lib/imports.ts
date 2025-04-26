@@ -3,6 +3,7 @@ export { default as Header } from "@/components/ui/Header";
 export { default as Footer } from "@/components/ui/Footer";
 export { default as Searchbar } from "@/components/ui/Searchbar";
 export { default as Card } from "@/components/ui/Card";
+export { default as InfoCard } from "@/components/ui/InfoCard";
 export { default as PopularTerms } from "@/components/ui/PopularTerms";
 
 
