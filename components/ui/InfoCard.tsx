@@ -18,7 +18,7 @@ const InfoCard = ({ id, name, pic, description }: InfoCardProps) => {
           <div className="space-y-3">
             <div className="space-y-2">
               <span className="bg-blue-900 w-12 h-1 inline-block rounded-full"></span>
-              <h2 className="text-xs sm:text-lg md:text-xl lg:text-3xl font-bold">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
                 {name}
               </h2>
             </div>
