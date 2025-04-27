@@ -15,7 +15,7 @@ async function fetchCategoryEntries(category: string): Promise<Entry[]> {
 }
 
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
-  const formattedCategory = decodeURIComponent(params.category).replace(/_/g, " & ");
+  const formattedCategory = decodeURIComponent(params.category).replace(/-/g, " ");
 
   let entries: Entry[] = [];
   try {
