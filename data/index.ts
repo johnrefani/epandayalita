@@ -72,16 +72,16 @@ export const footerLinks = [
 ];
 
 export const terms = [
-  { id: 1, word: "Maso", link: "/tools/maso" },
-  { id: 2, word: "Mulye", link: "/tools/mulye" },
-  { id: 3, word: "Palihan", link: "/tools/palihan" },
-  { id: 4, word: "Balalong", link: "/tools/balalong" },
-  { id: 5, word: "Kinabase", link: "/product/kinabase" },
-  { id: 6, word: "Sungot-hipon", link: "/product/sungot-hipon" },
-  { id: 7, word: "Gapas", link: "/product/gapas" },
-  { id: 8, word: "Ginunting", link: "/product/ginunting" },
-  { id: 9, word: "Lukas", link: "/process/lukas" },
-  { id: 10, word: "Mulyonan", link: "/tools/mulyonan" },
+  { id: 1, word: "Maso", link: "/mga-kasangkapan-at-materyales/maso" },
+  { id: 2, word: "Mulye", link: "/mga-kasangkapan-at-materyales/mulye" },
+  { id: 3, word: "Palihan", link: "/mga-kasangkapan-at-materyales/palihan" },
+  { id: 4, word: "Balalong", link: "/mga-kasangkapan-at-materyales/balalong" },
+  { id: 5, word: "Kinabase", link: "/mga-produkto/kinabase" },
+  { id: 6, word: "Sungot-hipon", link: "/mga-produkto/sungot-hipon" },
+  { id: 7, word: "Gapas", link: "/mga-produkto/gapas" },
+  { id: 8, word: "Ginunting", link: "/mga-produkto/ginunting" },
+  { id: 9, word: "Lukas", link: "/proseso/lukas" },
+  { id: 10, word: "Mulyonan", link: "/mga-kasangkapan-at-materyales/mulyonan" },
 ];
 
 export const Information = [
