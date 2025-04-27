@@ -12,10 +12,10 @@ export const navLinks = [
     title: "Mga Kategoriya",
     href: "#mgakategoriya",
     dropdown: [
-      { id: 1, title: "Mga Bahagi", href: "/part" },
-      { id: 2, title: "Proseso", href: "/process" },
-      { id: 3, title: "Mga Produkto", href: "/product" },
-      { id: 4, title: "Mga Kasangkapan at Materyales", href: "/tools" },
+      { id: 1, title: "Mga Bahagi", href: "/mga-bahagi" },
+      { id: 2, title: "Proseso", href: "/proseso" },
+      { id: 3, title: "Mga Produkto", href: "/mga-produkto" },
+      { id: 4, title: "Mga Kasangkapan at Materyales", href: "mga-kasangkapan-at-materyales" },
     ],
   },
   {
